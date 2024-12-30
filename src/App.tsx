@@ -1,10 +1,12 @@
-import { Button } from "./components/ui/button";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import Login from "./pages/Auth/Student/Login";
 
 export default function App() {
   return (
-    <div className="text-center text-2xl my-10">
-      Attendence Management Software <br />
-      <Button>Button</Button>
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Login />} />
+      </Routes>
+    </Router>
   );
 }
