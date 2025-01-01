@@ -1,50 +1,85 @@
-# React + TypeScript + Vite
+# Geolocation-Based Attendance Management System
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Introduction
+This system provides an innovative approach to attendance management by leveraging geolocation technology to ensure accurate and tamper-proof attendance records. Designed for educational settings, the platform enables students to sign in only when they are within a specific proximity to their lecturer.
 
-Currently, two official plugins are available:
+## Features
+### For Students:
+- **Geofencing:** Ensures students can only sign attendance when near the lecturer.
+- **Real-time Notifications:** Alerts for successful attendance sign-ins and updates.
+- **Attendance Reports:** Provides detailed records for students to review their attendance history.
+- **User-Friendly Interface:** Simple login, sign-up, and attendance tracking process.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### For Lecturers:
+- **Geofencing Management:** Set the geofenced area for attendance tracking.
+- **Attendance Monitoring:** View real-time attendance status for their classes.
+- **Detailed Reports:** Access class-specific attendance summaries and export data if needed.
 
-## Expanding the ESLint configuration
+### For Super Admins:
+- **User Management:** Manage students, lecturers, and their roles.
+- **Analytics Dashboard:** Monitor overall attendance trends and system usage.
+- **System Settings:** Configure global settings like geofencing sensitivity and notification preferences.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Prerequisites
+- Node.js and npm installed on your system.
+- A MongoDB database instance.
+- Postman (optional, for testing APIs).
 
-- Configure the top-level `parserOptions` property like this:
+## Installation
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/your-repo/geolocation-attendance.git
+   cd geolocation-attendance
+   ```
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+3. Create a `.env` file in the project root and configure the following environment variables:
+   ```env
+   PORT=5000
+   DATABASE_URL=your-mongodb-connection-string
+   JWT_SECRET=your-secret-key
+   ```
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+4. Start the development server:
+   ```bash
+   npm start
+   ```
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+## Usage
+1. **Login Page:**
+   - The first page displayed is the student login page.
+   - Students can use the "Sign Up" link to create an account if they don’t have one.
+
+2. **Student Dashboard:**
+   - Once logged in, students can view their attendance status and sign in when within the geofenced area.
+   - Students can also view their attendance history for all registered courses.
+   - Students will also get real time update once a lecture has commenced.
+
+3. **Lecturer Dashboard (Future Development):**
+   - Lecturers will have the ability to set geofenced areas and view real-time attendance.
+   - Lecturers will have the ability to uncheck a students attendance.
+   - Lecturers will have the ability to set online classes on the platform.
+
+4. **Admin Dashboard (Future Development):**
+   - Super Admins will manage users, monitor system analytics, and configure settings.
+
+## Technologies Used
+- **Frontend:** React.js
+- **Backend:** Node.js, Express.js
+- **Database:** MongoDB
+- **Geolocation Services:** Integrated with GPS APIs
+
+## Future Enhancements
+- Add lecturer-specific dashboards.
+- Implement role-based access control.
+- Extend the geolocation feature to support multi-campus institutions.
+
+## Contributing
+Contributions are welcome! Please fork the repository and submit a pull request for review.
+
+## License
+This project is licensed under the [MIT License](LICENSE).
