@@ -1,4 +1,4 @@
-import StudentLoginForm from "./Form";
+import StudentLoginForm from "./loginForm";
 
 export default function Login() {
   return (

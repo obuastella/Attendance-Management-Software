@@ -15,7 +15,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { useTheme } from "@mui/material/styles";
 
-export default function StudentLoginForm() {
+export default function StudentSignUpForm() {
   const theme = useTheme();
   const [showPassword, setShowPassword] = useState(false);
   const handleClickShowPassword = () => setShowPassword((show) => !show);
@@ -62,9 +62,6 @@ export default function StudentLoginForm() {
               borderColor: "#2D45FF",
               color: "black",
             },
-            "& .MuiFormControl-root": {
-              color: "#A0A4A8",
-            },
             "& .MuiFormLabel-root": {
               color: "#A0A4A8",
             },
@@ -72,6 +69,29 @@ export default function StudentLoginForm() {
           required
           id="outlined-required"
           label="Matric no"
+          focused
+        />
+        <TextField
+          sx={{
+            width: "100%",
+            [theme.breakpoints.up("md")]: {
+              width: "80%",
+            },
+            margin: "auto",
+            border: "1",
+            borderColor: "#2D45FF",
+            "& .MuiOutlinedInput-root": {
+              borderRadius: "16px",
+              borderColor: "#2D45FF",
+              color: "black",
+            },
+            "& .MuiFormLabel-root": {
+              color: "#A0A4A8",
+            },
+          }}
+          required
+          id="outlined-required"
+          label="Email"
           focused
         />
         <FormControl
@@ -145,9 +165,6 @@ export default function StudentLoginForm() {
               },
             }}
           />
-          <Link className="text-[14px] text-primary hover:underline" to="#">
-            Forgot Password
-          </Link>
         </Box>
         <Button
           className="w-[80%] rounded-[16px] text-[20px] p-[24px] text-white"
@@ -156,9 +173,9 @@ export default function StudentLoginForm() {
           Continue
         </Button>
         <div className="text-secondary">
-          Don't have an account?{" "}
-          <Link className="text-primary hover:underline" to="">
-            Sign up
+          Already have an account?{" "}
+          <Link className="text-primary hover:underline" to="/">
+            Sign in
           </Link>
         </div>
       </form>
