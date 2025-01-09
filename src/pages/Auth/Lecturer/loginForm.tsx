@@ -316,7 +316,7 @@ export default function LecturerLoginForm() {
 
         <div className="text-secondary">
           Don't have an account?{" "}
-          <Link className="text-primary hover:underline" to="/lecturer/sign-up">
+          <Link className="text-primary hover:underline" to="/lecturer/signup">
             Sign up
           </Link>
         </div>

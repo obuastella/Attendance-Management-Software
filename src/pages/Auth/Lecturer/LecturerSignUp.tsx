@@ -1,8 +1,8 @@
 import LecturerSignUpForm from "./SignUpForm";
 
-export default function LecturerSignUp() {
+const LecturerSignup = () => {
   return (
-    <section className="flex justify-center items-center w-full h-screen bg-gray-50">
+    <div className="flex justify-center items-center w-full h-screen bg-gray-50">
       <div className="shadow-md w-full md:w-[50%] py-[40px] px-[24px] border rounded-[20px] bg-white">
         <img
           className="w-[101px] h-[101px] border rounded-full m-auto"
@@ -17,6 +17,8 @@ export default function LecturerSignUp() {
         </p>
         <LecturerSignUpForm />
       </div>
-    </section>
+    </div>
   );
-}
+};
+
+export default LecturerSignup;
