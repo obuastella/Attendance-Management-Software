@@ -12,7 +12,7 @@ export default function App() {
         <Route path="/sign-up" element={<SignUp />} />
         {/*  */}
         <Route path="/lecturer/login" element={<LecturerLogin />} />
-        <Route path="lecturer/signup" element={<LecturerSignup />} />
+        <Route path="/lecturer/signup" element={<LecturerSignup />} />
       </Routes>
     </Router>
   );
