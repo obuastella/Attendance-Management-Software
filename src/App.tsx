@@ -1,8 +1,8 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Login from "./pages/Auth/Student/Login";
 import SignUp from "./pages/Auth/Student/SignUp";
-import LecturerSignUp from "./pages/Auth/Lecturer/lecturerSignUp";
 import LecturerLogin from "./pages/Auth/Lecturer/LecturerLogin";
+import LecturerSignUp from "./pages/Auth/Lecturer/lecturerSignUp";
 
 export default function App() {
   return (
