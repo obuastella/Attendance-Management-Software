@@ -1,7 +1,7 @@
 import LecturerLoginForm from "./loginForm";
 
 
-export default function lecturerLogin() {
+export default function LecturerLogin() {
   return (
     <section className="flex justify-center items-center w-full h-screen">
       <div className="shadow-md w-full md:w-[50%] py-[40px] px-[24px] border rounded-[20px]">
