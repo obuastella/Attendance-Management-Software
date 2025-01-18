@@ -10,7 +10,6 @@ export default function App() {
       <Routes>
         <Route path="/" element={<Login />} />
         <Route path="/sign-up" element={<SignUp />} />
-        {/*  */}
         <Route path="/lecturer/login" element={<LecturerLogin />} />
         <Route path="/lecturer/signup" element={<LecturerSignup />} />
       </Routes>
