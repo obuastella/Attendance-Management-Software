@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { Visibility, VisibilityOff } from "@mui/icons-material";
+import { Margin, Visibility, VisibilityOff } from "@mui/icons-material";
 import {
   Box,
   Checkbox,
@@ -138,10 +138,14 @@ export default function LecturerSignUpForm() {
       isValid = false;
     }
 
-    if (formData.password.length < 8) {
+    if (
+      !/^(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()\-_=+{}[\]:;"'<>,.?/])[A-Za-z\d!@#$%^&*()\-_=+{}[\]:;"'<>,.?/]{8,}$/.test(
+        formData.password
+      )
+    ) {
       setErrorWithTimer(
         "password",
-        "Password must be at least 8 characters long."
+        "Password must be 8+ chars, include an uppercase, a number, and a special character (e.g., !, @, #)."
       );
       isValid = false;
     }
@@ -187,12 +191,6 @@ export default function LecturerSignUpForm() {
       height: "50px",
     },
     "& .MuiFormLabel-root": { color: "#A0A4A8" },
-    "& .MuiFormHelperText-root": {
-      position: "absolute",
-      bottom: "-20px",
-      marginTop: 0,
-      marginBottom: 0,
-    },
   };
 
   return (
@@ -222,11 +220,10 @@ export default function LecturerSignUpForm() {
       >
         <Box
           sx={{
-            position: "relative",
             width: "100%",
-            height: "50px",
             display: "flex",
-            justifyContent: "center",
+            flexDirection: "column",
+            alignItems: "center",
           }}
         >
           <TextField
@@ -244,11 +241,10 @@ export default function LecturerSignUpForm() {
 
         <Box
           sx={{
-            position: "relative",
             width: "100%",
-            height: "50px",
             display: "flex",
-            justifyContent: "center",
+            flexDirection: "column",
+            alignItems: "center",
           }}
         >
           <TextField
@@ -267,11 +263,10 @@ export default function LecturerSignUpForm() {
 
         <Box
           sx={{
-            position: "relative",
             width: "100%",
-            height: "50px",
             display: "flex",
-            justifyContent: "center",
+            flexDirection: "column",
+            alignItems: "center",
           }}
         >
           <TextField
@@ -289,13 +284,10 @@ export default function LecturerSignUpForm() {
 
         <Box
           sx={{
-            position: "relative",
             width: "100%",
-            height: "50px",
             display: "flex",
             flexDirection: "column",
-                      alignItems: "center",
-            marginBottom: "30px",
+            alignItems: "center",
           }}
         >
           <FormControl
@@ -338,29 +330,21 @@ export default function LecturerSignUpForm() {
               }
               label="Password"
             />
-            {errors.password && (
-              <Box
-                sx={{
-                  position: "absolute",
-                  bottom: "-20px",
-                  left: "14px",
-                  color: "error.main",
-                  fontSize: "0.75rem",
-                  fontWeight: 400,
-                }}
-              >
-                {errors.password}
-              </Box>
-            )}
+            <Box
+              sx={{ color: "error.main", fontSize: "0.75rem", fontWeight: 400 }}
+            >
+              {errors.password}
+            </Box>
           </FormControl>
+
           <Box
             sx={{
               width: "100%",
               [theme.breakpoints.up("md")]: { width: "80%" },
               display: "flex",
               justifyContent: "space-between",
-                          alignItems: "center",
-              marginTop: "10px",
+              alignItems: "center",
+              margin: "10px 0",
             }}
           >
             <FormControlLabel
@@ -368,18 +352,21 @@ export default function LecturerSignUpForm() {
               label="Remember me"
               sx={{
                 color: "#A0A4A8",
-                "& .MuiTypography-root": { fontSize: "14px" },
+                "& .MuiFormControlLabel-label": {
+                  fontSize: "14px",
+                  color: "#A0A4A8",
+                },
               }}
             />
           </Box>
-        </Box>
 
-        <Button
-          className="w-[80%] rounded-[16px] text-[20px] p-[24px] text-white bg-primary"
-          type="submit"
-        >
-          Sign Up
-        </Button>
+          <Button
+            className="w-[80%] rounded-[16px] text-[20px] p-[24px] text-white bg-primary"
+            type="submit"
+          >
+            Sign Up
+          </Button>
+        </Box>
 
         <div className="text-secondary">
           Already have an account?{" "}
