@@ -1,8 +1,8 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Login from "./pages/Auth/Student/Login";
 import SignUp from "./pages/Auth/Student/SignUp";
-// import LecturerLogin from "./pages/Auth/Lecturer/LecturerLogin";
-// import LecturerSignup from "./pages/Auth/Lecturer/LecturerSignup";
+import LecturerLogin from "./pages/Auth/Lecturer/LecturerLogin";
+import LecturerSignup from "./pages/Auth/Lecturer/LecturerSignUp";
 
 export default function App() {
   return (
@@ -10,10 +10,8 @@ export default function App() {
       <Routes>
         <Route path="/" element={<Login />} />
         <Route path="/sign-up" element={<SignUp />} />
-        {/* Remove the comments in the codes, probably work at your end */}
-        
-        {/* <Route path="/lecturer/login" element={<LecturerLogin />} /> */}
-        {/* <Route path="/lecturer/signup" element={<LecturerSignup />} /> */}
+        <Route path="/lecturer/login" element={<LecturerLogin />} />
+        <Route path="/lecturer/signup" element={<LecturerSignup />} />
       </Routes>
     </Router>
   );

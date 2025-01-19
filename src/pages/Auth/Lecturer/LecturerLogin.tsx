@@ -1,6 +1,5 @@
 import LecturerLoginForm from "./loginForm";
 
-
 export default function LecturerLogin() {
   return (
     <section className="flex justify-center items-center w-full h-screen">
@@ -11,7 +10,7 @@ export default function LecturerLogin() {
           alt="logo"
         />
         <h2 className="text-center text-[20px] md:text-2xl font-semibold mt-3">
-          Sign in to your account
+          Lecturer Sign in
         </h2>
         <p className="my-1 text-[16px] md:text-base text-center text-secondary">
           Enter your details to log in to your account
