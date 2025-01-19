@@ -109,7 +109,10 @@ export default function LecturerLoginForm() {
       setErrorWithTimer("lecturerId", "Lecturer ID is required.");
       isValid = false;
     } else if (!idRegex.test(formData.lecturerId)) {
-      setErrorWithTimer("lecturerId", "Invalid Lecturer ID format.");
+      setErrorWithTimer(
+        "lecturerId",
+        "Invalid Lecturer ID format. Format: LEC-XX-12345 (e.g., LEC-CS-12345)."
+      );
       isValid = false;
     }
 
@@ -161,10 +164,7 @@ export default function LecturerLoginForm() {
     },
     "& .MuiFormLabel-root": { color: "#A0A4A8" },
     "& .MuiFormHelperText-root": {
-      position: "absolute",
-      bottom: "-20px",
-      marginTop: 0,
-      marginBottom: 0,
+      margin: "4px 0",
     },
   };
 
@@ -193,37 +193,23 @@ export default function LecturerLoginForm() {
           gap: "32px",
         }}
       >
-        <Box
-          sx={{
-            position: "relative",
-            width: "100%",
-            height: "56px",
-            display: "flex",
-            justifyContent: "center",
-          }}
-        >
+        <Box sx={{ width: "100%", display: "flex", justifyContent: "center" }}>
           <TextField
             id="lecturerId"
             label="Lecturer ID"
             value={formData.lecturerId}
             onChange={handleChange}
             error={!!errors.lecturerId}
-            helperText={errors.lecturerId}
+            helperText={
+              errors.lecturerId || "Format: LEC-XX-12345 (e.g., LEC-CS-12345)."
+            }
             sx={commonTextFieldStyles}
             required
             focused
           />
         </Box>
 
-        <Box
-          sx={{
-            position: "relative",
-            width: "100%",
-            height: "56px",
-            display: "flex",
-            justifyContent: "center",
-          }}
-        >
+        <Box sx={{ width: "100%", display: "flex", justifyContent: "center" }}>
           <FormControl
             sx={{
               ...commonTextFieldStyles,
@@ -267,12 +253,10 @@ export default function LecturerLoginForm() {
             {errors.password && (
               <Box
                 sx={{
-                  position: "absolute",
-                  bottom: "-20px",
-                  left: "14px",
                   color: "error.main",
                   fontSize: "0.75rem",
                   fontWeight: 400,
+                  mt: 1,
                 }}
               >
                 {errors.password}
